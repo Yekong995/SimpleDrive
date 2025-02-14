@@ -1,7 +1,5 @@
-# Flask Download Server
+# SimpleDrive
 
-This is a simple server for download only.
+This is a simple server for drive usage.
 
 Use with `ngrok` to transfer file remotely.
-
-<!-- <a href="{{ url_for('upload') }}" id="upload_btn"><button>Upload</button></a> -->
