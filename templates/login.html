@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+        <title>Login</title>
+    </head>
+    <body>
+            {% if get_flashed_messages() %}
+            <hr />
+                {% for message in get_flashed_messages() %}
+                <h3 style="color: red;">{{ message }}</h3>
+                {% endfor %}
+            <hr />
+            {% endif %}
+            
+            <div class="wrap">
+                <div class="login-form">
+                    <h1>Login</h1>
+                    <form method="post" action="{{ url_for('login') }}">
+                        <input type="text" name="username" placeholder="Username" autocomplete="off" class="input-block">
+                        <input type="password" name="pass" placeholder="Password" autocomplete="off" class="input-block">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

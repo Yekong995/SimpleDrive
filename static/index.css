@@ -1,0 +1,65 @@
+body {
+    background: url("./black-back.jpg") no-repeat;
+    background-size: cover;
+    color: azure;
+}
+
+#content {
+    border: 2px solid antiquewhite;
+    border-radius: 5px;
+    margin: 8px;
+    backdrop-filter: blur(5px);
+}
+
+#o {
+    margin:15px;
+}
+
+#file_content {
+    font-size: 1.1em;
+}
+
+#delete {
+    margin-left: 30px;
+    color: rgba(255, 0, 0, 0.800);
+    text-decoration: none;
+}
+
+#file_name {
+    color: #0366d6;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+#file_name:hover {
+    color: #0366d6;
+    text-decoration: underline;
+    transform: scaleX(1);
+}
+
+#title_bar {
+    display: flex;
+    vertical-align: left;
+}
+
+#btn_bar {
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 29px;
+    display: inline-block;
+    height: 20px;
+}
+
+#upload_btn {
+    margin-left: 3px;
+    margin-top: 5px;
+}
+
+button {
+    position: relative;
+    border-radius: 5px;
+    padding: 7px;
+    border: none;
+    color: azure;
+    background-color: gray;
+}

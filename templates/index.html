@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+    </head>
+
+    <body>
+        <div id="content">
+            <div id="o">
+                <div id="title_bar">
+                    <h1>File Server</h1>
+                    <div id="btn_bar">
+                        <a href="{{ url_for('refresh') }}" id="refresh_btn"><button>Refresh</button></a>
+                        <form id="upload_btn" method="post" enctype=multipart/form-data>
+                            <input type=file name=file>
+                            <input type=submit value=Upload>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- flash msg -->
+                {% if get_flashed_messages() %}
+                <hr />
+                    {% for message in get_flashed_messages() %}
+                    <h3 style="color: red;">{{ message }}</h3>
+                    {% endfor %}
+                <hr />
+                {% endif %}
+
+                <hr />
+                    <ul id="file_content">
+                        {% for file in files %}
+                        <li>
+                            <a id="file_name" href="{{ url_for('download', filename=file) }}">{{ file }}</a>
+                            {% if has_permission %}
+                            <a id="delete" href="{{ url_for('delete', filename=file)}}">Delete</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                <hr />
+            </div>
+        </div>
+    </body>
+</html>
